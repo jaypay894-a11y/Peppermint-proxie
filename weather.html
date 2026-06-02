@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-container">
+            <div class="game-header">
+                <h1>🌤️ Weather Dashboard</h1>
+                <a href="index.html">← Back Home</a>
+            </div>
+
+            <div class="weather-content">
+                <div class="search-section">
+                    <input 
+                        type="text" 
+                        id="locationInput" 
+                        placeholder="Enter city name (e.g., New York, London, Tokyo)"
+                        class="search-input"
+                    >
+                    <button onclick="searchWeather()" class="btn">Search</button>
+                    <button onclick="getLocationWeather()" class="btn btn-secondary">📍 Use My Location</button>
+                </div>
+
+                <div id="loadingSpinner" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Fetching weather data...</p>
+                </div>
+
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+                <div id="weatherContainer" class="weather-container" style="display: none;">
+                    <div class="current-weather">
+                        <div class="location-header">
+                            <h2 id="locationName"></h2>
+                            <p id="coordinates"></p>
+                        </div>
+
+                        <div class="weather-main">
+                            <div class="weather-icon" id="weatherIcon">🌤️</div>
+                            <div class="temperature-section">
+                                <div class="temperature" id="temperature"></div>
+                                <div class="weather-description" id="weatherDescription"></div>
+                            </div>
+                        </div>
+
+                        <div class="weather-details">
+                            <div class="detail-box">
+                                <label>Feels Like</label>
+                                <span id="feelsLike"></span>
+                            </div>
+                            <div class="detail-box">
+                                <label>Humidity</label>
+                                <span id="humidity"></span>
+                            </div>
+                            <div class="detail-box">
+                                <label>Wind Speed</label>
+                                <span id="windSpeed"></span>
+                            </div>
+                            <div class="detail-box">
+                                <label>Pressure</label>
+                                <span id="pressure"></span>
+                            </div>
+                            <div class="detail-box">
+                                <label>UV Index</label>
+                                <span id="uvIndex"></span>
+                            </div>
+                            <div class="detail-box">
+                                <label>Visibility</label>
+                                <span id="visibility"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forecast-section">
+                        <h3>7-Day Forecast</h3>
+                        <div class="forecast-grid" id="forecastGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
